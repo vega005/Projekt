@@ -9,9 +9,19 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+
 public class GameItem {
 
-    private Long Id;
+
+    public GameItem(String title, Type type, String production, String description) {
+        this.title = title;
+        this.type = type;
+        this.production = production;
+        this.description = description;
+    }
+
+
+    //private Long Id;
 
     private String title;
 
