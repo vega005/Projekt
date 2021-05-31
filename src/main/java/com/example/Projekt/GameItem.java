@@ -1,30 +1,26 @@
 package com.example.Projekt;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import javax.persistence.*;
 
 @Builder
 @Getter
 @Setter
 @ToString
-
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "game")
 public class GameItem {
 
-
-    public GameItem(String title, Type type, String production, String description) {
-        this.title = title;
-        this.type = type;
-        this.production = production;
-        this.description = description;
-    }
-
-
-    //private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long Id;
 
     private String title;
 
+    @Enumerated(EnumType.STRING)
     private Type type;
 
     private String production;
