@@ -28,8 +28,8 @@
             <td colspan="2"> No Games Found </td>
         </tr>
         <tr th:each="games : ${games}">
-            <td><span th:text="${games.title}"> Title </span></td>
-            <td><span th:text="${games.description}"> Author </span></td>
+            <td><a th:href="@{/details/{id}(id=${games.id})}" th:text="${games.title}"></a></td>
+            <td><span th:text="${games.description}"></span></td>
         </tr>
         </tbody>
     </table>
